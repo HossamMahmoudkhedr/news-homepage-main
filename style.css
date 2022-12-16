@@ -64,9 +64,22 @@ header ul li a {
 header ul li a:hover {
   color: var(--Soft-orange);
 }
+header .open-menu {
+  display: none;
+}
+header .close-menu {
+  display: none;
+}
+header svg {
+  cursor: pointer;
+}
 /* End Header */
 
 /* Start Main Section */
+.mobile {
+  display: none;
+}
+
 .main-section {
   display: flex;
   row-gap: 2rem;
@@ -185,6 +198,7 @@ header ul li a:hover {
 }
 .topic-section img {
   width: 130px;
+  object-fit: cover;
 }
 .topic-section .right-side {
   display: flex;
@@ -209,3 +223,121 @@ header ul li a:hover {
   font-size: 1.2rem;
 }
 /* End Bottom Section */
+
+@media (max-width: 768px) {
+  .container {
+    margin: 3rem 1rem;
+  }
+  .grid {
+    display: block;
+  }
+  body {
+    position: relative;
+  }
+  header .open-menu {
+    display: block;
+    transform: scale(1.3);
+  }
+  header .close-menu {
+    display: block;
+    position: absolute;
+    right: 31px;
+    transform: scale(1.3);
+    top: 53px;
+  }
+  .black.active {
+    position: absolute;
+    background-color: black;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: -50px;
+    left: 0;
+  }
+  header ul {
+    position: absolute;
+    background-color: var(--Off-white);
+    flex-direction: column;
+    padding: 10rem 20px;
+    width: 70%;
+    height: 100%;
+    top: -50px;
+    font-weight: 700;
+    right: 0;
+    z-index: 2;
+    transform: scaleX(0);
+    transition: all 0.3s linear;
+    transform-origin: right;
+    opacity: 0;
+  }
+
+  header ul.active {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  .main-section {
+    flex-direction: column;
+    margin-bottom: 7rem;
+  }
+  .main-section .image img:first-child {
+    display: none;
+  }
+
+  .main-section .image .mobile {
+    display: block;
+    object-fit: cover;
+  }
+
+  .main-section h1 {
+    font-size: 2.5rem;
+  }
+  .main-section .text {
+    gap: 2rem;
+  }
+
+  .new-section .small-section h3 {
+    font-size: 1.4rem;
+  }
+
+  .new-section .small-section p {
+    font-size: 1rem;
+  }
+
+  .topic-section .right-side p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 992px) {
+  .main-section h1,
+  .main-section .text {
+    max-width: unset;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1024px) {
+  .main-section h1 {
+    max-width: 40%;
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .main-section h1 {
+    font-size: 3.5rem;
+  }
+  .main-section .text p {
+    font-size: 1.3rem;
+  }
+  .main-section {
+    row-gap: unset;
+    grid-column: 1 / 6;
+  }
+
+  .new-section {
+    grid-column: 6 / 10;
+  }
+  .topic-section .right-side p {
+    line-height: 1.2;
+    font-size: 0.76rem;
+  }
+}

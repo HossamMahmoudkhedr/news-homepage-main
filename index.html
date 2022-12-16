@@ -17,6 +17,7 @@
 
 <body>
     <div class="container">
+      <div id="black" class="black"></div>
     <!-- Start Header -->
 <header>
   <div class="logo">
@@ -26,29 +27,42 @@
         fill="#00001A" />
     </svg>
   </div>
-  <ul>
+  <ul id="opened-menu">
+    <svg id="close" class="close-menu" width="32" height="31" xmlns="http://www.w3.org/2000/svg">
+      <g fill="#00001A" fill-rule="evenodd">
+        <path d="m2.919.297 28.284 28.284-2.122 2.122L.797 2.419z" />
+        <path d="M.797 28.581 29.081.297l2.122 2.122L2.919 30.703z" />
+      </g>
+    </svg>
     <li><a href="#">Home</a></li>
     <li><a href="#">New</a></li>
     <li><a href="#">Popular</a></li>
     <li><a href="#">Trending</a></li>
     <li><a href="#">Categories</a></li>
   </ul>
+  <svg id="menu" class="open-menu" width="40" height="17" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#00001A" fill-rule="evenodd">
+      <path d="M0 0h40v3H0zM0 7h40v3H0zM0 14h40v3H0z" />
+      <path d="M0 0h40v3H0z" />
+    </g>
+  </svg>
 </header>
   <!-- End Header -->
   <div class="grid">
 
     <!-- Start Main Section -->
     <div class="main-section">
-    <div class="image">
-      <img src="./assets/images/image-web-3-desktop.jpg" alt="">
-    </div>
-    <h1>The Bright Future of Web 3.0?</h1>
-    <div class="text">
-      <p class="text-color">
-        We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the
-        people.
-        But is it really fulfilling its promise?
-      </p>
+      <div class="image">
+        <img src="./assets/images/image-web-3-desktop.jpg" alt="">
+        <img class="mobile" src="./assets/images/image-web-3-mobile.jpg" alt="">
+      </div>
+      <h1>The Bright Future of Web 3.0?</h1>
+      <div class="text">
+        <p class="text-color">
+          We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the
+          people.
+          But is it really fulfilling its promise?
+        </p>
       <button>Read more</button>
     </div>
   </div>
